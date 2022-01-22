@@ -1,0 +1,18 @@
+fun main(){
+    val animal:Animal = Cat("persian",4)
+    when(animal){
+        is Cat -> System.out.println("Cat object")
+        is Dog -> System.out.println("Dog object")
+        is Lion -> System.out.println("Lion object")
+    }
+}
+
+sealed class Animal //Different states with restricted number of hierarchies
+data class Cat(val name:String,val leg:Int):Animal()
+data class Dog(val name:String,val food:String):Animal()
+object Lion:Animal()
+
+
+1. IDE aware of different types of subclasses, no need for else branch whereas in abstract class this is opposite.
+2. Sealed classes are abstract by itself and cannot be instantiated directly.
+3. Subclasses extending sealed classes should be either nested classes of the Sealed class or should be declared in the same file of the Sealed class.
