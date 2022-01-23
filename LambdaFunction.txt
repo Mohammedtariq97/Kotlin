@@ -1,0 +1,13 @@
+fun main() {
+    //Lambda function with return value
+    val product : (Int,Int) -> Int = { number1,number2 ->
+       number1 * number2
+    }
+    println(product(5,6))
+    
+    //No return value lambda function
+    val displayName:(String) -> Unit = {
+        println(it)
+    }
+    displayName("Tariq")
+}
