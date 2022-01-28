@@ -1,0 +1,18 @@
+fun main() {
+    println(Animal.Pet().petVar)  //Nested class- Pet
+    
+    var obj = Animal.Pet()
+    obj.display() // Id is 101
+}
+
+class Animal{
+    private var name = "Tariq"
+
+    class Pet{  //Nested class by default static and cannot be able to access the data member of outer class
+        var petVar = "Nested class- Pet"
+        private var id = 101
+        fun display(){
+            println("Id is $id")
+        }
+    }
+}

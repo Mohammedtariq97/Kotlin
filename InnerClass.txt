@@ -1,0 +1,19 @@
+fun main() {
+    println(Animal().Pet().petVar)  //Nested class- Pet
+    
+    var obj = Animal().Pet()
+    obj.display() // Id is 101, name is Tariq
+}
+
+class Animal{
+    private var name = "Tariq"
+
+    inner class Pet{  //Inner class by default static and cannot be declared inside interfaces or non-inner nested classes
+        var petVar = "Nested class- Pet"
+        private var id = 101
+        fun display(){
+            println("Id is $id")
+            println("name is $name") // can able to access the outer class member even private
+        }
+    }
+}
