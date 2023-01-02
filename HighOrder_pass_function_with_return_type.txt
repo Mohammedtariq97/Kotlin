@@ -1,0 +1,18 @@
+﻿//Higher order functions accepting function as parameter with return type Integer.
+fun main() {
+    higherFun(::addNumbers) //invoking higher order function 
+}
+
+
+//Higher order function
+fun higherFun(regFunc:(a:Int,b:Int) -> Int){
+    var result = regFunc(2,6)
+    println("Addition value is $result")
+}
+
+
+//Regular function
+fun addNumbers(a:Int, b:Int):Int{
+    var sum = a + b
+    return sum
+}

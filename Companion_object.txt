@@ -1,0 +1,30 @@
+﻿fun main() {
+    var student1 = StudentData("Abhishek", 18)
+    println(StudentData.getStudentCount())
+    println(StudentData.getStudentCount())
+    
+    var student2 = StudentData("Abhishek", 18)
+    println(StudentData.getStudentCount())
+}
+
+
+class StudentData(var name: String, var age: Int) {
+
+
+init {
+noOfStudents += 1
+}
+ 
+companion object StudentStats {
+        private var noOfStudents : Int = 0
+        fun getStudentCount():Int = noOfStudents
+        val SCHOOL_NAME = "St Stephens"
+}
+ 
+}
+
+
+Result:
+1
+1
+2

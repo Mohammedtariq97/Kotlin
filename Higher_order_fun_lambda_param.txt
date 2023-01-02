@@ -1,0 +1,24 @@
+﻿//Higher order functions accepting lambda expression as parameter
+fun main() {
+    higherFun(lambda) //invoking higher order function
+    higherFunParam(lambdaPar)  //invoking higher order function
+}
+
+
+var lambda = { println("Hello")} //Lambda expression returns nothing
+
+
+var lambdaPar = { a:Int, b:Int -> a+b } //Lamda expression returning integer
+
+
+//Higher order function
+fun higherFun(lmbd: () -> Unit){
+    lmbd()
+}
+
+
+//Higher order function
+fun higherFunParam(lambd: (Int,Int) -> Int){
+    var result = lambd(2,5)
+    println("Result = $result")
+}

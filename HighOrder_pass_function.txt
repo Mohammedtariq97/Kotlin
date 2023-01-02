@@ -1,0 +1,16 @@
+﻿//Higher order functions accepting function as parameter returns nothing
+fun main() {
+    higherFun("Hello brother!",::printString) //invoking higher order function 
+}
+
+
+//Higher order function
+fun higherFun(str:String, regFunc:(String) -> Unit){
+    regFunc(str)
+}
+
+
+//Regular function
+fun printString(s: String):Unit{
+    println("The name is $s")
+}
